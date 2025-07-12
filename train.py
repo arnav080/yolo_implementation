@@ -120,6 +120,8 @@ for epoch in range(epochs):
     model.train()
     epoch_loss = 0
 
+    train_bar = tqdm(train_loader, desc=f"Epoch {epoch+1}/{epochs}", leave=False)
+
     for batch_idx, (x, y) in enumerate(train_loader):
         x, y = x.to(device), y.to(device)
 
